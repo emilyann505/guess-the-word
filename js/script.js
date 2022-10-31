@@ -80,7 +80,7 @@ const makeGuess = function(guess) {
     } else {
         guessedLetters.push(guess);
         console.log(guessedLetters);
-        guessesRemaining(guess);
+        updateGuessesRemaining(guess);
         showGuessedLetters();
         updateWordInProgress(guessedLetters);
     }
@@ -115,7 +115,7 @@ const updateWordInProgress = function (guessedLetters) {
 };
 
 //fxn to count guesses remaining
-const guessesRemaining = function(guess) {
+const updateGuessesRemaining = function(guess) {
     const upperWord = word.toUpperCase();
     if (!upperWord.includes(guess)) {
         message.innerText = `Sorry, the word has no ${guess}.`;
